@@ -1,0 +1,143 @@
+body {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 100vh;
+}
+
+.App {
+  font-family: lato, sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  /* display: flex;
+  justify-content: space-evenly;
+  align-content: stretch; */
+  /* flex-wrap: wrap; */
+}
+
+.quoteArea {
+  min-height: 40vh;
+  max-height: 60vh;
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin: 20px auto;
+}
+
+blockquote p {
+  font-size: 1.3em;
+  padding: 10px;
+  min-height: 0;
+  max-height: 100%;
+}
+
+blockquote p::before {
+  content: "\201C";
+}
+
+blockquote p::after {
+  content: "\201D";
+}
+
+blockquote {
+  margin: 0;
+  padding-bottom: 10px;
+  padding: 10px;
+}
+
+blockquote footer {
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* blockquote footer {
+  ali
+} */
+
+@keyframes glow {
+  from {
+    background-color: #707070;
+  }
+  to {
+    background-color: #fcfcfc;
+    border: 1px solid #fcfcfc;
+  }
+}
+
+button {
+  width: 120px;
+  border-radius: 25px;
+  border: 1px outset #fefefe;
+  padding: 10px;
+  cursor: pointer;
+  animation: glow 750ms ease-in-out 750ms infinite alternate none;
+  font-size: 15px;
+}
+
+button:hover {
+  animation: none;
+  box-shadow: 8px 8px 5px rgb(200, 200, 200);
+}
+
+button:active {
+  border-style: inset;
+}
+
+.ataturk {
+  border: 1px solid red;
+  border-radius: 15px;
+  background: linear-gradient(60deg, white, red);
+  padding: 5px;
+}
+
+.random {
+  border: 1px solid red;
+  border-radius: 15px;
+  background: linear-gradient(60deg, orange, violet);
+  padding: 5px;
+}
+
+summary {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 16px;
+  background: radial-gradient(
+      circle 12px,
+      white 100%,
+      transparent calc(100% + 1px)
+    )
+    #ccc -16px;
+}
+
+details[open] summary {
+  background-color: dodgerblue;
+  background-position: 16px;
+}
+
+.lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 15px;
+  min-width: 100px;
+  max-height: 50px;
+}
+
+@media screen and (max-height: 630px) {
+  .quoteArea  {
+    max-height: fit-content;
+    max-width: 70%;
+  }
+  .random {
+    max-height: fit-content;
+    max-width: fit-content;
+  }
+  .ataturk {
+    max-height: fit-content;
+    max-width: fit-content;
+  }
+}
